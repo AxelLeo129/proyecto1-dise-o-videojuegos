@@ -10,6 +10,7 @@ public class ResetOnCollision : MonoBehaviour
         // Verifica si el objeto con el que se colisionó tiene la etiqueta "Enemy"
         if (collision.gameObject.CompareTag("Enemy"))
         {
+            Debug.Log("Player collided with enemy");
             // Reinicia el nivel actual
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
