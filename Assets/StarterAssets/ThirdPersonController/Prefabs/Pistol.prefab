@@ -118,7 +118,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   bulletHolePrefab: {fileID: 6036625849279834727, guid: e5ac5c7087f9712439eb4bfdf56eedda, type: 3}
-  fireRange: 200
+  fireRange: 600
 --- !u!114 &2903909946195757166
 MonoBehaviour:
   m_ObjectHideFlags: 0
