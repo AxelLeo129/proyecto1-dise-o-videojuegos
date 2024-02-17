@@ -3,11 +3,13 @@ using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
-    public Transform target; // Asigna el otro enemigo como objetivo en el Inspector
+    private Transform target; // Asigna el otro enemigo como objetivo en el Inspector
+
     private NavMeshAgent agent;
 
     void Start()
     {
+        target = GameObject.FindGameObjectWithTag("Player").transform;
         agent = GetComponent<NavMeshAgent>();
     }
 

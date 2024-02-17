@@ -23,18 +23,18 @@ public class WeaponController : MonoBehaviour
         HandleShoot();
     }
 
-    private IEnumerator DestroyEnemyAfterDelay(GameObject enemy, float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        Destroy(enemy);
-    }
+    // private IEnumerator DestroyEnemyAfterDelay(GameObject enemy, float delay)
+    // {
+    //     // yield return new WaitForSeconds(delay);
+    //     Destroy(enemy);
+    // }
 
     private void HandleShoot()
     {
-        if(Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1"))
         {
             RaycastHit hit;
-            if(Physics.Raycast(cameraPlayerTransform.position, cameraPlayerTransform.forward, out hit, fireRange, hittableLayers)) 
+            if (Physics.Raycast(cameraPlayerTransform.position, cameraPlayerTransform.forward, out hit, fireRange, hittableLayers))
             {
                 GameObject bulletHoleClone = Instantiate(bulletHolePrefab, hit.point + hit.normal * 0.001f, Quaternion.LookRotation(hit.normal));
                 Destroy(bulletHoleClone, 4f);
@@ -42,7 +42,8 @@ public class WeaponController : MonoBehaviour
                 if (hit.collider.gameObject.CompareTag("Enemy"))
                 {
                     Debug.Log("Disparo");
-                    StartCoroutine(DestroyEnemyAfterDelay(hit.collider.gameObject, 1f));
+                    // StartCoroutine(DestroyEnemyAfterDelay(hit.collider.gameObject, 1f));
+                    Destroy(hit.collider.gameObject, 1f);
                 }
             }
         }
